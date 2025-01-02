@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower Invitation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Envelope Section -->
+    <div id="envelope-section" class="envelope-container">
+        <img id="envelope" src="{{ url_for('static', filename='assets/envelope.jpg') }}" alt="Envelope" />
+    </div>
+
+    <!-- Main Content Section -->
+    <div id="main-content" class="hidden">
+        <div class="hero">
+           
+        </div>
+
+        <div class="details">
+            <h1>Welcome to Our Baby Shower</h1>
+            <p>We’re excited to celebrate this special day with you!</p>
+            <p>Date: February 1, 2025</p>
+            <p>Time: 12 noon </p>
+            <p>Location: Villages At Wellington Community Center <a href="https://maps.app.goo.gl/Psm5CK4J89z63DF29" target="_blank">Laurel, MD</a></p>
+        </div>
+
+        <div class="registry">
+            <h2>Registry</h2>
+            <p>Your presence and blessings is all we seek!</p>
+            <p> You can check out the link <a href="https://my.babylist.com/harnoor-bedi" target="_blank">Baby Registry</a></p>
+        </div>
+
+        <div class="rsvp">
+            <h2>RSVP</h2>
+            <form action="/rsvp" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="attendance">Will you attend?</label>
+                <select id="attendance" name="attendance" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="0" required>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+
+        <footer>
+            <p>&copy; Piyush and Harnoor's Baby Shower</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
